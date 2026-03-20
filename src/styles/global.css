@@ -1,3 +1,27 @@
+@font-face {
+	font-family: 'Advercase Web';
+	src: url('/fonts/advercasefont-regular-webfont.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Advercase Web';
+	src: url('/fonts/advercasefont-bold-webfont.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Seriously Nostalgic Serif Web';
+	src: url('/fonts/seriouslynostalgic-regular-webfont.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
 :root {
 	--bg: #f7f7fb;
 	--surface: #ffffff;
@@ -6,6 +30,8 @@
 	--primary: #3558e0;
 	--border: #e4e7ef;
 	--container: 68rem;
+	--font-body: 'Seriously Nostalgic Serif Web', Georgia, 'Times New Roman', serif;
+	--font-heading: 'Advercase Web', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 *,
@@ -18,9 +44,19 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	font-family: Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	font-family: var(--font-body);
 	background: var(--bg);
 	color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.brand {
+	font-family: var(--font-heading);
 }
 
 a {
