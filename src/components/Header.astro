@@ -41,8 +41,10 @@ const alternateHref = `/${alternateLang}${switchPath || '/'}`;
 						</li>
 					))
 				}
+				<li>
+					<a class="lang-switch" href={alternateHref}>{isGerman ? 'EN' : 'DE'}</a>
+				</li>
 			</ul>
 		</nav>
-		<a class="lang-switch" href={alternateHref}>{isGerman ? 'EN' : 'DE'}</a>
 	</div>
 </header>

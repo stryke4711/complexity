@@ -74,15 +74,13 @@ a:hover {
 }
 
 .site-header {
-	background: var(--surface);
-	border-bottom: 1px solid var(--border);
+	background: var(--bg);
 }
 
 .header-inner {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 1rem;
 	padding-block: 1rem;
 }
 
@@ -103,17 +101,13 @@ a:hover {
 .nav-list a {
 	color: var(--text);
 	font-weight: 700;
-	font-size: 1.05rem;
+	font-size: 1.12rem;
 	text-decoration: none;
 }
 
-.lang-switch {
-	color: var(--text);
-	font-weight: 700;
-	text-decoration: none;
-	border: 1px solid var(--border);
-	border-radius: 999px;
-	padding: 0.35rem 0.7rem;
+.nav-list a.lang-switch {
+	border: 1px solid #000;
+	padding: 0.15rem 0.45rem;
 }
 
 main.container {
@@ -148,8 +142,7 @@ main.container {
 }
 
 .site-footer {
-	border-top: 1px solid var(--border);
-	background: var(--surface);
+	background: var(--bg);
 }
 
 .footer-inner {
