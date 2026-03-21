@@ -14,14 +14,14 @@ const links = isGerman
 			{ href: `${base}/projects`, label: 'Projekte' },
 			{ href: `${base}/photography`, label: 'Fotografie' },
 			{ href: `${base}/personal-projects`, label: 'Persönliche Projekte' },
-			{ href: `${base}/cats`, label: 'Katzen' }
+			{ href: `${base}/cats`, label: 'Katzen', icon: '/assets/icons/paw.png' }
 		]
 	: [
 			{ href: `${base}/`, label: 'Home' },
 			{ href: `${base}/projects`, label: 'Projects' },
 			{ href: `${base}/photography`, label: 'Photography' },
 			{ href: `${base}/personal-projects`, label: 'Personal Projects' },
-			{ href: `${base}/cats`, label: 'Cats' }
+			{ href: `${base}/cats`, label: 'Cats', icon: '/assets/icons/paw.png' }
 		];
 
 const switchPath = Astro.url.pathname.replace(/^\/(en|de)/, '');
@@ -37,14 +37,12 @@ const alternateHref = `/${alternateLang}${switchPath || '/'}`;
 				{
 					links.map((link) => (
 						<li>
-							<a href={link.href}>
-								{
-									link.href.includes('/cats') ? (
-										<img src="/assets/icons/paw.png" alt="Cats" class="nav-icon" />
-									) : (
-										link.label
-									)
-								}
+							<a href={link.href} aria-label={link.label}>
+								{link.icon ? (
+									<img src={link.icon} alt={link.label} class="nav-icon" />
+								) : (
+									link.label
+								)}
 							</a>
 						</li>
 					))
