@@ -11,17 +11,17 @@ const base = `/${lang}`;
 const links = isGerman
 	? [
 			{ href: `${base}/`, label: 'Home' },
-			{ href: `${base}/projects`, label: 'Projekte' },
-			{ href: `${base}/photography`, label: 'Fotografie' },
-			{ href: `${base}/personal-projects`, label: 'Persönliche Projekte' },
-			{ href: `${base}/cats`, label: 'Katzen', icon: '/assets/icons/paw.png' }
+			{ href: `${base}/projects/`, label: 'Projekte' },
+			{ href: `${base}/photography/`, label: 'Fotografie' },
+			{ href: `${base}/personal-projects/`, label: 'Persönliche Projekte' },
+			{ href: `${base}/cats/`, label: 'Katzen', icon: '/assets/icons/paw.png' }
 		]
 	: [
 			{ href: `${base}/`, label: 'Home' },
-			{ href: `${base}/projects`, label: 'Projects' },
-			{ href: `${base}/photography`, label: 'Photography' },
-			{ href: `${base}/personal-projects`, label: 'Personal Projects' },
-			{ href: `${base}/cats`, label: 'Cats', icon: '/assets/icons/paw.png' }
+			{ href: `${base}/projects/`, label: 'Projects' },
+			{ href: `${base}/photography/`, label: 'Photography' },
+			{ href: `${base}/personal-projects/`, label: 'Personal Projects' },
+			{ href: `${base}/cats/`, label: 'Cats', icon: '/assets/icons/paw.png' }
 		];
 
 const switchPath = Astro.url.pathname.replace(/^\/(en|de)/, '');
