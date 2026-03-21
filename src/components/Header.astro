@@ -24,14 +24,15 @@ const links = isGerman
 			{ href: `${base}/cats/`, label: 'Cats', icon: '/assets/icons/paw.png' }
 		];
 
-const switchPath = Astro.url.pathname.replace(/^\/(en|de)/, '');
+const switchPath = Astro.url.pathname.replace(/^\/(en|de)/, '') || '/';
+const normalizedSwitchPath = switchPath.endsWith('/') ? switchPath : `${switchPath}/`;
 const alternateLang = isGerman ? 'en' : 'de';
-const alternateHref = `/${alternateLang}${switchPath || '/'}`;
+const alternateHref = `/${alternateLang}${normalizedSwitchPath}`;
 ---
 
 <header class="site-header">
 	<div class="content-wrap header-inner">
-		<a class="brand" href={`${base}/`}>Vince</a>
+		<a class="brand" href={`${base}/`}>Vincent König</a>
 		<nav aria-label="Main navigation">
 			<ul class="nav-list">
 				{
