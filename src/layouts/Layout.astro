@@ -6,16 +6,18 @@ import '../styles/global.css';
 interface Props {
 	title?: string;
 	description?: string;
+	lang?: 'en' | 'de';
 }
 
 const {
 	title = 'My Classic Starter Site',
-	description = 'A static website starter built with Astro.'
+	description = 'A static website starter built with Astro.',
+	lang = Astro.url.pathname.startsWith('/de') ? 'de' : 'en'
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -46,10 +48,10 @@ const {
 		<meta name="description" content={description} />
 	</head>
 	<body>
-		<Header />
+		<Header lang={lang} />
 		<main class="container">
 			<slot />
 		</main>
-		<Footer />
+		<Footer lang={lang} />
 	</body>
 </html>

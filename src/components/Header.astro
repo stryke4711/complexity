@@ -1,14 +1,37 @@
 ---
-const links = [
-	{ href: '/', label: 'Home' },
-	{ href: '/about', label: 'About' },
-	{ href: '/contact', label: 'Contact' }
-];
+interface Props {
+	lang?: 'en' | 'de';
+}
+
+const { lang = Astro.url.pathname.startsWith('/de') ? 'de' : 'en' } = Astro.props;
+
+const isGerman = lang === 'de';
+const base = `/${lang}`;
+
+const links = isGerman
+	? [
+			{ href: `${base}/`, label: 'Home' },
+			{ href: `${base}/projects`, label: 'Projekte' },
+			{ href: `${base}/photography`, label: 'Fotografie' },
+			{ href: `${base}/personal-projects`, label: 'Persönliche Projekte' },
+			{ href: `${base}/cats`, label: 'Katzen' }
+		]
+	: [
+			{ href: `${base}/`, label: 'Home' },
+			{ href: `${base}/projects`, label: 'Projects' },
+			{ href: `${base}/photography`, label: 'Photography' },
+			{ href: `${base}/personal-projects`, label: 'Personal Projects' },
+			{ href: `${base}/cats`, label: 'Cats' }
+		];
+
+const switchPath = Astro.url.pathname.replace(/^\/(en|de)/, '');
+const alternateLang = isGerman ? 'en' : 'de';
+const alternateHref = `/${alternateLang}${switchPath || '/'}`;
 ---
 
 <header class="site-header">
 	<div class="container header-inner">
-		<a class="brand" href="/">Classic Starter</a>
+		<a class="brand" href={`${base}/`}>Vince</a>
 		<nav aria-label="Main navigation">
 			<ul class="nav-list">
 				{
@@ -20,5 +43,6 @@ const links = [
 				}
 			</ul>
 		</nav>
+		<a class="lang-switch" href={alternateHref}>{isGerman ? 'EN' : 'DE'}</a>
 	</div>
 </header>

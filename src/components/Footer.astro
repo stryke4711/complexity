@@ -1,5 +1,17 @@
+---
+interface Props {
+	lang?: 'en' | 'de';
+}
+
+const { lang = 'en' } = Astro.props;
+const text =
+	lang === 'de'
+		? `© ${new Date().getFullYear()} Vince. Alle Rechte vorbehalten.`
+		: `© ${new Date().getFullYear()} Vince. All rights reserved.`;
+---
+
 <footer class="site-footer">
 	<div class="container footer-inner">
-		<p>&copy; {new Date().getFullYear()} Classic Starter. All rights reserved.</p>
+		<p>{text}</p>
 	</div>
 </footer>

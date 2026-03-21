@@ -23,7 +23,7 @@
 }
 
 :root {
-	--bg: #f7f7fb;
+	--bg: #f3f2eb;
 	--surface: #ffffff;
 	--text: #1e1e2f;
 	--muted: #5e6475;
@@ -82,6 +82,7 @@ a:hover {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 1rem;
 	padding-block: 1rem;
 }
 
@@ -92,10 +93,27 @@ a:hover {
 
 .nav-list {
 	display: flex;
+	flex-wrap: wrap;
 	list-style: none;
 	gap: 1rem;
 	padding: 0;
 	margin: 0;
+}
+
+.nav-list a {
+	color: var(--text);
+	font-weight: 700;
+	font-size: 1.05rem;
+	text-decoration: none;
+}
+
+.lang-switch {
+	color: var(--text);
+	font-weight: 700;
+	text-decoration: none;
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	padding: 0.35rem 0.7rem;
 }
 
 main.container {
