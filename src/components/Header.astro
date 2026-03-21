@@ -30,19 +30,29 @@ const alternateHref = `/${alternateLang}${switchPath || '/'}`;
 ---
 
 <header class="site-header">
-	<div class="container header-inner">
+	<div class="content-wrap header-inner">
 		<a class="brand" href={`${base}/`}>Vince</a>
 		<nav aria-label="Main navigation">
 			<ul class="nav-list">
 				{
 					links.map((link) => (
 						<li>
-							<a href={link.href}>{link.label}</a>
+							<a href={link.href}>
+								{
+									link.href.includes('/cats') ? (
+										<img src="/assets/icons/paw.png" alt="Cats" class="nav-icon" />
+									) : (
+										link.label
+									)
+								}
+							</a>
 						</li>
 					))
 				}
 				<li>
-					<a class="lang-switch" href={alternateHref}>{isGerman ? 'EN' : 'DE'}</a>
+					<a class="lang-switch" href={alternateHref}>
+						{isGerman ? 'EN' : 'DE'}
+					</a>
 				</li>
 			</ul>
 		</nav>

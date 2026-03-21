@@ -29,7 +29,10 @@
 	--muted: #5e6475;
 	--primary: #3558e0;
 	--border: #e4e7ef;
-	--container: 68rem;
+	
+	--content-width: 68rem;
+	--page-padding: clamp(1rem, 3vw, 2rem);
+
 	--font-body: 'Seriously Nostalgic Serif Web', Georgia, 'Times New Roman', serif;
 	--font-heading: 'Advercase Web', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
@@ -68,9 +71,19 @@ a:hover {
 	text-decoration: underline;
 }
 
-.container {
-	width: min(100% - 2rem, var(--container));
+.nav-list a:hover {
+	text-decoration: underline;
+}
+
+.nav-list a:hover .nav-icon {
+	opacity: 0.75;
+}
+
+.content-wrap {
+	width: 100%;
+	max-width: var(--content-width);
 	margin-inline: auto;
+	padding-inline: var(--page-padding);
 }
 
 .site-header {
@@ -91,6 +104,7 @@ a:hover {
 
 .nav-list {
 	display: flex;
+	align-items: center;
 	flex-wrap: wrap;
 	list-style: none;
 	gap: 1rem;
@@ -99,6 +113,8 @@ a:hover {
 }
 
 .nav-list a {
+	display: flex;
+	align-items: center;
 	color: var(--text);
 	font-weight: 700;
 	font-size: 1.12rem;
@@ -110,7 +126,13 @@ a:hover {
 	padding: 0.15rem 0.45rem;
 }
 
-main.container {
+.nav-icon {
+	height: 1.1em;   /* matches text size dynamically */
+	width: auto;
+	display: inline-block;
+}
+
+.page-main {
 	padding-block: 2.5rem;
 }
 
